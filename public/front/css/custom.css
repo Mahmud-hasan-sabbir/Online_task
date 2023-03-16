@@ -1,0 +1,87 @@
+/* Please ❤ this if you like it! 😊 */
+
+// SCSS Variable
+$color-gray: #d9d9d9;
+/* Google Font Link */
+
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap");
+/* Reset CSS Style */
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-family: "Work Sans", sans-serif;
+}
+
+img {
+    object-fit: cover;
+}
+
+/* Portfolio Section Style */
+
+.portfolio {
+    padding: 3rem 0 1.5rem;
+&__title {
+     font-size: 3rem;
+     line-height: 1;
+ }
+&__nav__btn {
+     font-size: 1.3rem;
+     font-weight: 400;
+     padding: 0.4rem 1rem;
+&::before,
+&::after {
+     content: "";
+     position: absolute;
+     left: 0;
+     transform: scaleX(0);
+     width: 100%;
+     height: 2px;
+     background-color: $color-gray;
+     transition: transform ease-in-out 0.3s;
+ }
+&::before {
+     top: 0;
+     transform-origin: left center;
+ }
+&::after {
+     bottom: 0;
+     transform-origin: right center;
+ }
+&.active,
+&:hover,
+&:focus {
+&::before,
+&::after {
+     transform: scaleX(1);
+ }
+&::before {
+     transform-origin: right center;
+ }
+&::after {
+     transform-origin: left center;
+ }
+}
+}
+&__card {
+     margin-bottom: 1.5rem;
+&::after {
+     content: "";
+     position: absolute;
+     top: 0;
+     right: 0;
+     left: 0;
+     bottom: 0;
+     background: linear-gradient( to top, rgba($color: #000000, $alpha: 0.6), transparent);
+     opacity: 0;
+     transition: opacity linear 0.3s;
+ }
+&:hover,
+&:focus {
+&::after {
+     opacity: 1;
+ }
+}
+}
+}
